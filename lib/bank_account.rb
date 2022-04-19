@@ -5,8 +5,8 @@ class BankAccount
   end
 
   def deposit(money)
-    error_message = "You have tried to deposit #{money}, but you can not deposit more than £100."
-    if money <= 100
+    error_message = "You have tried to deposit £#{money}, but you can not deposit more than £100."
+    if money <= 100 && @current_balance < 100
       @current_balance += money
       "You have deposited £#{money} into your account."
     else
@@ -25,6 +25,6 @@ class BankAccount
   end
 
   def show_balance
-    @current_balance
+    "You currently have £#{@current_balance} in your account."
   end
 end

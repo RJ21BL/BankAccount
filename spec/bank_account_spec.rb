@@ -9,17 +9,17 @@ describe BankAccount do
       expect(bank_account.current_balance).to eq(10)
     end
 
-    it 'allows the customer the deposit no more than £100 into their account' do
-      bank_account = BankAccount.new
+    it 'does not allow the customer to deposit more than £100 into their account' do
+      bank_account w= BankAccount.new
       bank_account.deposit(99)
       expect(bank_account.current_balance).to be <=(100)
     end
 
     xit 'raises an error if the customer deposits more than £100 into their account' do
       bank_account = BankAccount.new
-      bank_account.deposit(100)
+      deposit_money = bank_account.deposit(101)
       error_message = "You have tried to deposit £101, but you can not deposit more than £100."
-      expect { bank_account.current_balance }.to raise_error error_message
+      expect { deposit_money }.to raise_error error_message
     end
   end
 
