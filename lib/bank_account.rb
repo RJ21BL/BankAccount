@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class BankAccount
   attr_reader :current_balance
+
   def initialize
     @current_balance = 0
   end
@@ -10,17 +13,17 @@ class BankAccount
       @current_balance += money
       "You have deposited £#{money} into your account."
     else
-      fail error_message
+      raise error_message
     end
   end
-  
+
   def withdraw(money)
     error_message = "You have tried to withdraw £#{money}, but you only have £#{@current_balance} in your account"
     if money <= @current_balance
       @current_balance -= money
       "You have withdrawn £#{money} from your account."
     else
-      fail error_message
+      raise error_message
     end
   end
 
