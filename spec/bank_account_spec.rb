@@ -38,4 +38,12 @@ describe BankAccount do
       expect { withdraw_money }.to raise_error error_message
     end
   end
+
+  describe '#show_balance' do
+    it 'shows the customers current balance' do
+      bank_account = BankAccount.new
+      balance = bank_account.show_balance
+      expect(bank_account.current_balance).to eq(0)
+    end
+  end
 end

@@ -23,4 +23,8 @@ class BankAccount
       fail error_message
     end
   end
+
+  def show_balance
+    @current_balance
+  end
 end
