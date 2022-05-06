@@ -33,7 +33,7 @@ describe BankAccount do
       expect(bank_account.current_balance).to eq(0)
     end
 
-    it 'does not allow the customer to withdraw more than the maximum balance' do
+    it 'does not allow the customer to withdraw more than the current balance' do
       bank_account = BankAccount.new
       bank_account.deposit(10)
       bank_account.withdraw(10)
