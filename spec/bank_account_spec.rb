@@ -52,7 +52,7 @@ describe BankAccount do
     it 'shows the customers current balance' do
       bank_account = BankAccount.new
       balance = bank_account.show_balance
-      expect(bank_account.current_balance).to eq(0)
+      expect(balance).to eq "You currently have £0 in your account."
     end
   end
 end
