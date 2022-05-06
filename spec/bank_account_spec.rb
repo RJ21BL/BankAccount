@@ -42,7 +42,7 @@ describe BankAccount do
 
     xit 'raises an error if the customer withdraws more than the maximum balance from their account' do
       bank_account = BankAccount.new
-      withdraw_money = bank_account.withdraw(5)
+      withdraw_money = bank_account.withdraw(10)
       error_message = 'You have tried to withdraw £10, but you only have £0 in your account.'
       expect { withdraw_money }.to raise_error error_message
     end
